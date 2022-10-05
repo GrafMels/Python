@@ -6,12 +6,15 @@ list = []
 for i in range(N):
     list.append(randint(-N, N))
 
+print(list)
 
-with open('file.txt', 'w') as data:
-    data.write(f"{str(list[i-1])}")
-    for i in range(1,N):
-        data.write(f"\n{str(list[i-1])}")
-    data.close()
+index_read_list = []
+with open('file.txt', 'r') as data:
+    index_read_list = data.read().split("\n")
 
-print(sum(list))
+multi = list[int(index_read_list[0])] * list[int(index_read_list[1])] * list[int(index_read_list[2])]
+
+print(multi)
+    
+
 

@@ -7,11 +7,13 @@
 
 import math
 
-N = input('Введите вещественное число: ')
+N = str(input('Введите вещественное число: '))
+
+if '-' in N:
+    N = N.replace('-', '')
 
 if '.' in N:
     divided = N.split(".")
-    len_N = len(N)
 else:
     divided = [N, 0]
     len_N = len(N)

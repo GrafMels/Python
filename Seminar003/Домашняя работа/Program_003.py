@@ -20,7 +20,7 @@ while min(list) == 0:
     index_of_zeros.append(list.index(min(list)))
     list.pop(index_of_zeros[counter])
     counter += 1
-# Берём нулевые значения превращаем их в 0.5 самое среднее значение
+# Берём нулевые значения и временно их удаляем
 
 answer = [max(list), min(list)]
 answer.append(answer[0]-answer[1])

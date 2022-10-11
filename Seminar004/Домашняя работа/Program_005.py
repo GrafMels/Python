@@ -14,7 +14,6 @@ for i in range(int(string_split[1]) * 2):
     elif i == (int(string_split[1]) * 2) - 1:
         list_term_1.append(int(string_split[i]))
 
-print(list_term_1)
 file.close()
 
 with open("File_005_2.txt") as file:
@@ -33,7 +32,6 @@ for i in range(int(string_split[1]) * 2):
     elif i == (int(string_split[1]) * 2) - 1:
         list_term_2.append(int(string_split[i]))
 
-print(list_term_2)
 file.close()
 
 list_term = []
@@ -63,17 +61,19 @@ else:
 
 polynomial = ''
 for i in range(len(list_term)):
-    if (max_len-1)-i == 1:
+    if (max_len-1)-i == 1 and list_term[i] > 0:
         polynomial += str(f' +{list_term[i]}x')
-    elif (max_len-1)-i == 0:
+    elif (max_len-1)-i == 0 and list_term[i] > 0:
         polynomial += str(f' +{list_term[i]}')
+    elif (max_len-1)-i == 1 and list_term[i] <= 0:
+        polynomial += str(f' {list_term[i]}x')
+    elif (max_len-1)-i == 0 and list_term[i] <= 0:
+        polynomial += str(f' {list_term[i]}')
     elif list_term[i] > 0:
         polynomial += str(f' +{list_term[i]}x^{(max_len-1)-i}')
     else:
         polynomial += str(f' {list_term[i]}x^{(max_len-1)-i}')
     
-
-print(polynomial)
 
 with open("File_005.txt",'w') as file:
     file.write(polynomial)

@@ -1,0 +1,21 @@
+from random import shuffle
+
+list_out_of_order = [x for x in range (1,10)]
+shuffle(list_out_of_order)
+print(list_out_of_order)
+
+result_list = []
+
+for i in range(len(list_out_of_order)-1):
+    sub_list = [list_out_of_order[i]]
+
+    for j in range(i, len(list_out_of_order)-1):
+        if list_out_of_order[j] < list_out_of_order[j+1]:
+            sub_list.append(list_out_of_order[j+1])
+        else:
+            break
+    if len(sub_list) > 0 and ''.join(map(str, sub_list)) not in [''.join(map(str, i)) for i in result_list]:
+        result_list.append(sub_list)
+
+print(result_list)
+

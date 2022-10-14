@@ -37,17 +37,23 @@ def polynomial(f, f_max):
             else:
                 return (f'x^{Unic} +{x}{polynomial(f-1, f_max)}')
 
-f = int(input('Введите натуральную степень k: '))
+f = int(input('Введите натуральную степень k для первого файла: '))
 # f = 13
 
 polynomial_string = ''
 polynomial_string = str(polynomial(f+1, f+1))
 print(polynomial_string)
 
-# my_file = open("File_004.txt", "w+")
-# my_file.write(polynomial_string)
+my_file = open("File_005_1.txt", "w+")
+my_file.write(polynomial_string)
+my_file.close()
 
+f = int(input('Введите натуральную степень k для второго файла: '))
 
-with open('File_004.txt', 'w') as my_file:
-    my_file.write(polynomial_string.encode('utf-8').decode('utf-8'))
-    my_file.close()
+polynomial_string = ''
+polynomial_string = str(polynomial(f+1, f+1))
+print(polynomial_string)
+
+my_file = open("File_005_2.txt", "w+")
+my_file.write(polynomial_string)
+my_file.close()

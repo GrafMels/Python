@@ -37,10 +37,4 @@ def expansion (list_out):
             string_out += list_out[i][-1]
     return string_out
         
-        
-        
-        
-    
-    
-
 Input_Output()

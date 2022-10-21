@@ -5,8 +5,8 @@ var_2 = int(input('Введите вторую переменную: '))
 
 for i in range(min(var_1, var_2), var_1*var_2, min(var_1, var_2)):
     if i % var_1 == 0 and i % var_2 == 0:
-        print(f'Наименьшее Оющее Кратное: {i}')
+        print(f'Наименьшее Общее Кратное: {i}')
         break
 else:
-    print(f'Наименьшее Оющее Кратное: {var_1*var_2}')
+    print(f'Наименьшее Общее Кратное: {var_1*var_2}')
         

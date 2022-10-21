@@ -39,7 +39,6 @@ def fragmentation():
                     temp_var /= int(temp_list[j+1])
                     if temp_var == int(temp_var):
                         temp_var = int(temp_var)
-            print(temp_var)
             list_string[i] = str(temp_var)    
         elif list_string[i].find('*') != -1:
             temp_str = list_string[i]
@@ -72,6 +71,5 @@ def fragmentation():
     temp_var = 0
     for i in range(len(list_string)):
         temp_var += float(list_string[i])
-    
     logger.logger(f'{model.start_string}={temp_var}')
     model.full_string = temp_var

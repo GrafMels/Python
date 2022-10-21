@@ -6,10 +6,7 @@ def input_string(enter):
     a = input(enter)
     return a
 
-def fragmentation():
-    start_string = model.full_string
-
-    
+def fragmentation(): 
     model.full_string = str(model.full_string).replace('-',' - ').replace('+',' + ')
     if(model.full_string[-1])=='*' or (model.full_string[-1])=='/' or (model.full_string[-1])=='+' or (model.full_string[-1])=='-':
         view.error_value()
@@ -26,6 +23,9 @@ def fragmentation():
                     temp_var = int(temp_list[j-1]) * int(temp_list[j+1])
                     count+=1
                 elif temp_list[j] == '/' and count == 0:
+                    if int(temp_list[j+1]) == 0:
+                        view.dev_by_zero()
+                        return '/0'
                     temp_var = int(temp_list[j-1]) / int(temp_list[j+1])
                     if temp_var == int(temp_var):
                         temp_var = int(temp_var)
@@ -33,6 +33,9 @@ def fragmentation():
                 elif temp_list[j] == '*' and count != 0:
                     temp_var *= int(temp_list[j+1])
                 elif temp_list[j] == '/' and count != 0:
+                    if int(temp_list[j+1]) == 0:
+                        view.dev_by_zero()
+                        return '/0'
                     temp_var /= int(temp_list[j+1])
                     if temp_var == int(temp_var):
                         temp_var = int(temp_var)
@@ -70,5 +73,5 @@ def fragmentation():
     for i in range(len(list_string)):
         temp_var += float(list_string[i])
     
-    logger.logger(f'{start_string}={temp_var}')
+    logger.logger(f'{model.start_string}={temp_var}')
     model.full_string = temp_var

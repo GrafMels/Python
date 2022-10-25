@@ -19,4 +19,4 @@ def start():
             case '6':
                 model.delete_contact()
             case '7':
-                model.seach_contact()
+                model.search_contact()

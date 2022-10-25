@@ -50,7 +50,6 @@ def delete_contact():
 def search_contact():
     global contacts
     search_parameter = input('0 - id:\n1 - Имя:\n2 - Номер:\n3 - Коментарий:\nВведите параметр по которому будем искать: ')
-    print(search_parameter)
     desired_value = ''
     match search_parameter:
             case '0':

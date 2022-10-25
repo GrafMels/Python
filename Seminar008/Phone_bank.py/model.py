@@ -41,8 +41,20 @@ def change_contact():
     
 def delete_contact():
     global contacts
-    id_dict = [int(i[0]) for i in contacts]
-    contacts
+    id_dict = [int(i[0]) for i in contacts].pop()
+    id_delete_contact = int(input('Введите id удаляемого контакта: '))-1
+    contacts.pop(id_delete_contact)
+    for i in range(len(contacts)):
+        contacts[i][0] = i+1
+
+def seach_contact():
+    global contacts
+    id_dict = [int(i[0]) for i in contacts].pop()
+    id_delete_contact = int(input('Введите id удаляемого контакта: '))-1
+    contacts.pop(id_delete_contact)
+    for i in range(len(contacts)):
+        contacts[i][0] = i+1
+    
 
 
 

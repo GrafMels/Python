@@ -16,7 +16,8 @@ def start():
                 model.add_contact()
             case '5':
                 model.change_contact()
-            # case '6':
+            case '6':
+                model.delete_contact()
             # case '7':
             # case '8':
 start()

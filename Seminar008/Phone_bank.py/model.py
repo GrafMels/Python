@@ -38,6 +38,12 @@ def change_contact():
     change_contact.append(input('Введите phone: '))
     change_contact.append(input('Введите комментарий: '))
     contacts[id_change_contact-1] = change_contact
+    
+def delete_contact():
+    global contacts
+    id_dict = [int(i[0]) for i in contacts]
+    contacts
+
 
 
     
